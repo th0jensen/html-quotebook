@@ -16,6 +16,12 @@
   src: url('fonts/IBM_Plex_Sans/IBMPlexSans-Regular.ttf');
 }
 
+@font-face {
+  font-family: IBM Plex Sans;
+  font-weight: bold;
+  src: url('fonts/IBM_Plex_Sans/IBMPlexSans-Bold.ttf');
+}
+
 * {
   margin: 0;
 }
@@ -23,6 +29,7 @@
 body {
   background-color: #181818;
   color: whitesmoke;
+  margin-bottom: 2rem;
 }
 
 header {
@@ -48,22 +55,28 @@ main {
   padding-top: 1px;
 
   .content-wrapper {
-    margin-top: 100px;
+    margin-top: 75px;
     display: grid;
-    grid-template-columns: 1fr auto 1fr;
-    row-gap: 20px;
+    justify-content: center;
+    align-items: start;
+    row-gap: 50px;
 
     section {
       grid-column: 2 / span 1;
       display: grid;
       row-gap: 20px;
 
+      .section-header {
+        font-family: IBM Plex Sans;
+      }
+
       blockquote {
+        width: 350px;
         display: grid;
         row-gap: 2px;
         padding: 20px;
         border-radius: 10px;
-        background-color: whitesmoke;
+        background-color: rgba(255, 255, 255, 0.75);
         color: black;
 
         span {
@@ -72,14 +85,34 @@ main {
         }
 
         cite {
-          font-size: 0.75rem;
           display: grid;
           justify-content: right;
           align-items: center;
           font-family: IBM Plex Sans;
+          font-size: 0.75rem;
           font-weight: regular;
         }
       }
+    }
+  }
+}
+
+.content-wrapper {
+  >*:nth-child(1) {
+    blockquote {
+      background-color: lightsalmon;
+    }
+  }
+
+  >*:nth-child(2) {
+    blockquote {
+      background-color: lightgreen;
+    }
+  }
+
+  >*:nth-child(3) {
+    blockquote {
+      background-color: lightblue;
     }
   }
 }
